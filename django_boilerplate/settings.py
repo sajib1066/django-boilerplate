@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import os
 
 from .local_settings import (
-    BASE_DIR, SECRET_KEY, DEBUG, ALLOWED_HOSTS, DATABASES
+    BASE_DIR, SECRET_KEY, DEBUG, ALLOWED_HOSTS, DB_CONFIG
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,7 +85,9 @@ AUTH_USER_MODEL = 'customauth.User'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = DATABASES
+DATABASES = {
+    'default': os.getenv('DB_CONFIG', DB_CONFIG)
+}
 
 
 # Password validation
