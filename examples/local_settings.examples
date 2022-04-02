@@ -29,3 +29,9 @@ DB_CONFIG = {
     'USER': os.getenv('DB_USER', '<db_user>'),
     'PASSWORD': os.getenv('DB_PASS', '<db_password>')
 }
+
+# For MongoDB database
+DB_CONFIG = {
+    'ENGINE': os.getenv('DB_ENGINE', 'djongo'),
+    'NAME': os.getenv('DB_NAME', '<db_name>'),
+}
