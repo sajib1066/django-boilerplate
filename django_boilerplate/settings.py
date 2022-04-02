@@ -43,7 +43,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = []
 
 LOCAL_APPS = [
-    'authentication.apps.AuthenticationConfig',
+    'customauth.apps.CustomauthConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -77,6 +77,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_boilerplate.wsgi.application'
+
+AUTH_USER_MODEL = 'customauth.User'
 
 
 # Database
