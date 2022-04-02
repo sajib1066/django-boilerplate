@@ -1,4 +1,8 @@
 asgiref==3.5.0
 backports.zoneinfo==0.2.1
 Django==4.0.3
+flake8==4.0.1
+mccabe==0.6.1
+pycodestyle==2.8.0
+pyflakes==2.4.0
 sqlparse==0.4.2
