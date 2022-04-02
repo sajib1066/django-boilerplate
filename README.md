@@ -1,5 +1,5 @@
 # Django Boilerplate
 Boilerplate for any django projects with HTML, CSS, Bootstrap, REST API.
 
-.. image:: https://img.shields.io/badge/django-4.0.3-brightgreen
-    :target: https://pypi.org/project/Django/
+[![python-version](https://img.shields.io/badge/Python-3.8.10-blue)](https://www.python.org/)
+[![django-version](https://img.shields.io/badge/Django-4.0.3-green)](https://www.djangoproject.com/)
