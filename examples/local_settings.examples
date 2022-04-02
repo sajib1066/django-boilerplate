@@ -19,3 +19,13 @@ DB_CONFIG = {
     'USER': os.getenv('DB_USER', '<db_user>'),
     'PASSWORD': os.getenv('DB_PASS', '<db_password>')
 }
+
+# For MySQL database
+DB_CONFIG = {
+    'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.mysql'),
+    'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+    'PORT': os.getenv('DB_PORT', 3306),
+    'NAME': os.getenv('DB_NAME', '<database_name>'),
+    'USER': os.getenv('DB_USER', '<db_user>'),
+    'PASSWORD': os.getenv('DB_PASS', '<db_password>')
+}
