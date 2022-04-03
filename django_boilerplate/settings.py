@@ -48,7 +48,10 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    # https://www.django-rest-framework.org/#installation
+    'rest_framework',
+]
 
 LOCAL_APPS = [
     'customauth.apps.CustomauthConfig',
