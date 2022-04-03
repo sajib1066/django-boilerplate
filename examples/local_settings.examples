@@ -1,9 +1,16 @@
+import os
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+STATICFILES_DIR = os.path.join(BASE_DIR, "staticfiles")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+MEDIA_DIR = os.path.join(BASE_DIR, "media")
+LOGS_DIR = os.path.join(BASE_DIR, "logs")
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7g6m3!$k6ga7(=tjbhm1_%1!hw+vo4)=!e$*zn*%4uleobqyw-'  # noqa
+SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
