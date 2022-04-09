@@ -1,5 +1,6 @@
 import logging
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from django.contrib.admin.models import LogEntry, DELETION
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
@@ -21,7 +22,8 @@ class ProfileInline(admin.StackedInline):
 
 
 @admin.register(User)
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(UserAdmin):
+    ordering = ('email', )
     list_display = (
         'id', 'email', 'verified_email', 'accepted_terms', 'read_terms',
         'is_staff', 'is_superuser', 'is_active', 'date_joined', 'last_updated',
@@ -30,9 +32,26 @@ class UserAdmin(admin.ModelAdmin):
     search_fields = ('email',)
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'verified_email')
     readonly_fields = (
-        'password', 'email_token', 'last_login', 'last_updated', 'date_joined'
+        'email_token', 'last_login', 'last_updated', 'date_joined'
     )
     list_display_links = ('id', 'email')
+    fieldsets = (
+        (None, {'fields': ('email', 'password')}),
+        ('Permissions', {'fields': ('groups', 'user_permissions')}),
+        ('Roles', {'fields': ('is_staff', 'is_superuser', 'is_active')}),
+        ('Additional', {'fields': (
+            'verified_email', 'email_token', 'accepted_terms', 'read_terms'
+        )}),
+        ('Dates', {'fields': ('last_login', 'last_updated', 'date_joined')})
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide', ),
+            'fields': (
+                'email', 'password1', 'password2'
+            )
+        }),
+    )
 
     inlines = (ProfileInline, )
 
