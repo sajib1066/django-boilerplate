@@ -1,0 +1,10 @@
+from django.views.generic import View
+from django.shortcuts import render
+
+
+class DashboardView(View):
+    """ Dashboard view """
+    template_name = 'dashboard/dashboard.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
