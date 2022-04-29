@@ -123,6 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = 'customauth:login'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/

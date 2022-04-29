@@ -22,5 +22,6 @@ from .views import HomeView
 urlpatterns = [
     path('management/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
+    path('auth/', include('customauth.urls')),
     path('dashboard/', include('dashboard.urls')),
 ]
