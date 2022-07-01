@@ -27,6 +27,7 @@ class Command(BaseCommand):
         projectfiles.append(managefile)
         projectfiles += glob.glob(os.path.join(base, old, "*.py"))
         projectfiles += glob.glob(os.path.join(base, old, "**", "*.py"))
+        projectfiles += glob.glob(os.path.join(base, old, "*.example"))
         for pythonfile in projectfiles:
             with open(pythonfile, 'r') as file:
                 filedata = file.read()

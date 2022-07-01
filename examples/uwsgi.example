@@ -1,0 +1,36 @@
+[uwsgi]
+# https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/uwsgi/
+
+# the base directory (full path)
+chdir           = /opt/django_boilerplate
+
+# Django's wsgi file
+module          = project_name.wsgi
+
+# the virtualenv (full path)
+home            = /opt/django_boilerplate/venv
+
+# process-related settings
+master          = true
+
+# maximum number of worker processes
+processes       = 8
+threads         = 2
+enable-threads  = True
+
+# the socket (use the full path to be safe
+socket          = /opt/django_boilerplate/uwsgi/uwsgi.sock
+
+# ... with appropriate permissions - may be needed
+chmod-socket    = 666
+
+# clear environment on exit
+vacuum          = true
+
+# respawning
+harakiri        = 30
+max-requests    = 5000
+
+# increase buffer size
+buffer-size     = 65535
+listen          = 4096

@@ -1,0 +1,17 @@
+[Unit]
+Description=django_boilerplate-uWSGI-instance
+After=network.target postgresql-11.service
+
+[Service]
+User=centos
+Group=nginx
+WorkingDirectory=/opt/django_boilerplate
+Environment="PATH=/opt/django_boilerplate/venv/bin"
+ExecStart=/opt/django_boilerplate/venv/bin/uwsgi --ini /opt/django_boilerplate/uwsgi/uwsgi.ini
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
