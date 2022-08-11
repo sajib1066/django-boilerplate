@@ -15,6 +15,7 @@ from .local_settings import (
     SECRET_KEY, DEBUG, ALLOWED_HOSTS, DB_CONFIG,
     TEMPLATES_DIR, STATICFILES_DIR, STATIC_DIR, MEDIA_DIR, LOGS_DIR
 )
+from django_boilerplate.logging import LOGGING
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -153,3 +154,10 @@ MEDIA_ROOT = MEDIA_DIR
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Logging ---------------------------------------------------------------------
+# https://docs.djangoproject.com/en/3.1/topics/logging/
+
+if os.getenv('DISABLE_LOGGING', False):  # for celery in jenkins ci only
+    LOGGING_CONFIG = None
+LOGGING = LOGGING  # logging.py
