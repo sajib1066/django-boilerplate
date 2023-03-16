@@ -1,6 +1,6 @@
 asgiref==3.5.0
 backports.zoneinfo==0.2.1
-Django==3.2.16
+Django==3.2.18
 django-filter==21.1
 django-mongoengine==0.4.6
 djangorestframework==3.13.1
