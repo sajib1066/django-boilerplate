@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.742" height="16.742" viewBox="0 0 16.742 16.742">
+  <g id="pie-chart" transform="translate(0 16.742) rotate(-90)">
+    <g id="Group_2916" data-name="Group 2916" transform="translate(8.829)">
+      <g id="Group_2915" data-name="Group 2915">
+        <path id="Path_1709" data-name="Path 1709" d="M270.49,0a.49.49,0,0,0-.49.49v6.9a.49.49,0,0,0,.49.49h6.932a.49.49,0,0,0,.49-.49A7.449,7.449,0,0,0,270.49,0Z" transform="translate(-270)" fill="#b5b5c3"/>
+      </g>
+    </g>
+    <g id="Group_2918" data-name="Group 2918" transform="translate(0 1.995)">
+      <g id="Group_2917" data-name="Group 2917">
+        <path id="Path_1710" data-name="Path 1710" d="M7.357,61a7.346,7.346,0,0,0-5.53,12.194l6.021-6.021V61.49A.49.49,0,0,0,7.357,61Z" transform="translate(0 -61)" fill="#b5b5c3"/>
+      </g>
+    </g>
+    <g id="Group_2920" data-name="Group 2920" transform="translate(2.521 8.861)">
+      <g id="Group_2919" data-name="Group 2919">
+        <path id="Path_1711" data-name="Path 1711" d="M88.721,271H83.1l-6.021,6.021a7.319,7.319,0,0,0,12.194-5.53A.506.506,0,0,0,88.721,271Z" transform="translate(-77.084 -271)" fill="#b5b5c3"/>
+      </g>
+    </g>
+  </g>
+</svg>

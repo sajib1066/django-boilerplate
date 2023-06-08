@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.535" height="14.888" viewBox="0 0 15.535 14.888">
+  <g id="infographic" transform="translate(0 -1)">
+    <path id="Path_1511" data-name="Path 1511" d="M2.647,7.65a.647.647,0,0,1-.43-1.131L5.13,3.93a.644.644,0,0,1,.507-.159l5.038.61,2.854-2.7a.647.647,0,0,1,.89.941L11.345,5.531a.65.65,0,0,1-.523.173l-5.05-.613-2.695,2.4a.645.645,0,0,1-.43.163Z" transform="translate(-0.706 -0.177)" fill="#fff"/>
+    <path id="Path_1512" data-name="Path 1512" d="M19.751,4.236a.483.483,0,0,1-.343-.142L17.143,1.829A.485.485,0,0,1,17.486,1h2.266a.486.486,0,0,1,.485.485V3.751a.485.485,0,0,1-.485.485Z" transform="translate(-5.996)" fill="#fff"/>
+    <path id="Path_1513" data-name="Path 1513" d="M4.884,17.809v1.78H1v-1.78A.809.809,0,0,1,1.809,17H4.075A.809.809,0,0,1,4.884,17.809Z" transform="translate(-0.353 -5.643)" fill="#fff"/>
+    <path id="Path_1514" data-name="Path 1514" d="M12.884,11.809v5.664H9V11.809A.809.809,0,0,1,9.809,11h2.266A.809.809,0,0,1,12.884,11.809Z" transform="translate(-3.174 -3.527)" fill="#fff"/>
+    <path id="Path_1515" data-name="Path 1515" d="M20.884,13.809v4.369H17V13.809A.809.809,0,0,1,17.809,13h2.266A.809.809,0,0,1,20.884,13.809Z" transform="translate(-5.996 -4.232)" fill="#fff"/>
+    <path id="Path_1516" data-name="Path 1516" d="M15.05,23.471H.485a.485.485,0,1,1,0-.971H15.05a.485.485,0,1,1,0,.971Z" transform="translate(0 -7.583)" fill="#fff"/>
+  </g>
+</svg>
