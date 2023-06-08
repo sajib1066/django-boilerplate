@@ -1,151 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
     {% load static %}
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta charset="utf-8" />
+        <title>Login</title>
+
+        <link rel="icon" type="image/x-icon" href="{% static 'backend/uploads/default-images/favicon.png' %}" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="lms, academy, eclass, elearning, education, online course,  learning management system, live class, live meeting, lms, online education, online teaching, udemy, quiz, school, skillshare" />
+        <meta name="author" content="Onest Tech" />
         <meta
             name="description"
             content="Onest academy - Learning Management System web application. web-based responsive application that includes an online learning management system, as well as admin, instructor panel and student panel. This is a completely ready-to-use learning management sy"
         />
-        <meta name="keywords" content="lms, academy, eclass, elearning, education, online course,  learning management system, live class, live meeting, lms, online education, online teaching, udemy, quiz, school, skillshare" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Onest Tech" />
-        <meta name="baseurl" content="index.html" />
-        <link rel="icon" type="image/x-icon" href="{% static 'backend/uploads/default-images/favicon.png' %}" />
-        <meta name="csrf_token" content="H5hgiR2X4Sk0rjudaRedcmBVztWKe5ZtylBFBzOx" />
-        <title>Sign In | Onest Academy</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/bootstrap-5.3.0.min.css' %}" />
 
-        <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/fonts-icon.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/icon-fonts.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/apexcharts.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/plugin.css' %}" />
 
-        <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/plugin.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/metisMenu.min.css' %}" />
 
-        <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/main-style.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/custom.css' %}" />
-        <style>
-            .light-mode, .dark-mode {
-            }
-        </style>
+        <link rel="stylesheet" href="{% static 'backend/assets/css/style.css' %}" />
     </head>
-    <body class="light-mode ltr" dir="ltr">
-        <main>
-            <section class="ot-login-area" id="ot_login_area">
-                <div class="container">
-                    <div class="row gutter-x-120 align-items-center">
-                        <div class="col-lg-6">
-                            <div class="ot-login-card">
-                                <div class="logo">
-                                    <a href="index.html"> <img src="{% static 'backend/uploads/default-images/logo.png' %}" alt="img" /></a>
-                                </div>
-                                <div class="title">
-                                    <h4>Sign In</h4>
-                                </div>
-                                <form action="" method="POST" id="studentSignIn">
-                                    {% csrf_token %}
-                                    <div class="position-relative ot-contact-form mb-24">
-                                        <label for="exampleInputEmail1" class="ot-contact-label">
-                                            Email Address
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        {{ form.email }}
-                                        <!-- <input class="form-control ot-contact-input" name="email" type="text" placeholder="Enter Email" aria-label="default input example" /> -->
-                                        <span class="text-danger custom-error-text" id="error_email"></span>
-                                    </div>
-                                    <div class="position-relative ot-contact-form mb-24">
-                                        <label for="exampleInputEmail1" class="ot-contact-label">
-                                            Password
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        {{ form.password }}
-                                        <!-- <input class="form-control ot-contact-input" name="password" type="password" placeholder="*******" aria-label="default input example" /> -->
-                                        <span class="text-danger custom-error-text" id="error_password"></span>
-                                    </div>
-                                    <div class="remember-me">
-                                        <label>
-                                            <input class="ot-checkbox" type="checkbox" value="programming" name="city" />
-                                            <small>Remember Me</small>
-                                            <span class="ot-checkmark"></span>
-                                        </label>
-                                        <div class="forget-section">
-                                            <a href="forgot-password.html" class="forget-pass">
-                                                <span>Forgot password?</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="d-grid">
-                                        <button type="submit" class="btn-primary-submit btn-login" id="studentSignInButton">Sign In</button>
-                                    </div>
-                                </form>
-                                <div class="login-footer">
-                                    <div class="create-account">
-                                        <p>
-                                            New User? <a href="sign-up.html"><span>Create an account</span></a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="mt-40 justify-content-center align-items-center">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <form action="" method="post" class="form d-flex justify-content-center align-items-start flex-column mb-10">
-                                                <input type="hidden" name="_token" value="H5hgiR2X4Sk0rjudaRedcmBVztWKe5ZtylBFBzOx" /> <input name="email" type="hidden" value="instructor@onest.com" />
-                                                <input name="password" type="hidden" value="123456" />
-                                                <input name="g-recaptcha-response" type="hidden" value="123456" />
-                                                <button type="submit" class="btn-primary-submit btn-out w-100" value="Login">instructor</button>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <form action="" method="post" class="form d-flex justify-content-center align-items-start flex-column mb-10">
-                                                <input type="hidden" name="_token" value="H5hgiR2X4Sk0rjudaRedcmBVztWKe5ZtylBFBzOx" /> <input name="email" type="hidden" value="student@onest.com" />
-                                                <input name="password" type="hidden" value="123456" />
-                                                <button type="submit" class="btn-primary-submit w-100" value="Login">student</button>
-                                            </form>
-                                        </div>
-                                    </div>
+    <body class="default-theme ltr" dir="ltr">
+        <main class="auth-page">
+            <section class="auth-container">
+                <div class="form-wrapper pv-80 ph-100 bg-white d-flex justify-content-center align-items-center flex-column">
+                    <div class="form-container d-flex justify-content-center align-items-start flex-column">
+                        <div class="mb-40">
+                            <a href="">
+                                <img src="{% static 'backend/uploads/default-images/logo.png' %}" alt="img" />
+                            </a>
+                        </div>
+
+                        <div class="form-heading mb-40">
+                            <h1 class="title mb-8">login</h1>
+                            <p class="subtitle mb-0">welcome back please login to your account</p>
+                        </div>
+
+                        <form action="" method="post" class="auth-form d-flex justify-content-center align-items-start flex-column">
+                            {% csrf_token %}
+                            <div class="input-field-group mb-20">
+                                <label for="username">email <sup class="fillable">*</sup></label><br />
+                                <div class="custom-input-field">
+                                    {{ form.email }}
+                                    <img src="{% static 'backend/assets/images/icons/username-cus.svg' %}" alt="img" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                            <div class="login-image">
-                                <img src="{% static 'frontend/default/login.png' %}" alt="img" />
+
+                            <div class="input-field-group mb-20">
+                                <label for="password">password <sup class="fillable">*</sup></label><br />
+                                <div class="custom-input-field password-input">
+                                    {{ form.password }}
+                                    <i class="lar la-eye"></i>
+                                    <img src="{% static 'backend/assets/images/icons/lock-cus.svg' %}" alt="img" />
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="d-flex justify-content-between align-items-center w-100 mt-20">
+                                <div class="remember-me input-check-radio">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" />
+                                        <label for="rememberMe">remember me</label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a class="fogotPassword" href="forgot-password.html">forgot password</a>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn pv-16 mt-32" value="Sign In">
+                                login
+                            </button>
+                        </form>
+
+                        <form action="" method="post" class="w-100 form d-flex justify-content-center align-items-start flex-column mt-20">
+                            {% csrf_token %}
+                            <input name="email" type="hidden" value="admin@gmail.com" />
+                            <input name="password" type="hidden" value="nothing1234" />
+                            <button type="submit" class="submit-button submit-button-only-border pv-14" value="Login">login as admin</button>
+                        </form>
                     </div>
                 </div>
             </section>
         </main>
-        <div class="preloader">
-            <div class="loader_img">
-                <img src="{% static 'backend/uploads/default-images/loder.gif' %}" class="loader-img" alt="img" />
-            </div>
-        </div>
-        <script>
-            var something_went_wrong = "something went wrong please try again";
-            var are_you_sure = "Are you sure";
-            var you_wont_be_able_to_revert_this = "You wont be able to revert this";
-            var yes_delete_it = "Yes delete it";
-            var added_bookmark = "Added bookmark";
-            var enter_data = "Please Enter";
-            var submitText = "Submit";
-            var currency = "$";
-            var file_type_not_allowed = "Please only input png , jpg , gif or svg type file";
-            var file_size_not_allowed = "File size too big";
-            var copied_url = "Copied%20successfully.html";
-        </script>
+        <script src="{% static 'backend/assets/js/theme.js' %}"></script>
 
-        <script src="{% static 'frontend/assets/js/jquery-3.7.0.min.js' %}"></script>
-        <script src="{% static 'frontend/assets/js/popper.min.js' %}"></script>
-        <script src="{% static 'frontend/assets/js/bootstrap-5.3.0.min.js' %}"></script>
-
-        <script src="{% static 'frontend/assets/js/plugin.js' %}"></script>
-
-        <script src="{% static 'backend/assets/js/multi_image.js' %}"></script>
-
-        <script src="{% static 'frontend/assets/js/main.js' %}"></script>
-        <script src="{% static 'backend/assets/js/ckeditor.js' %}"></script>
-        <script src="{% static 'frontend/js/main.js' %}"></script>
-        <script type="module" src="{% static 'frontend/js/__authentication.js' %}"></script>
+        <script src="{% static 'backend/assets/js/jquery-3.7.0.min.js' %}"></script>
+        <script src="{% static 'backend/assets/js/plugin.js' %}"></script>
+        <script src="{% static 'backend/assets/js/show-hide-password.js' %}"></script>
     </body>
 </html>
