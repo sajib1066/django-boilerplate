@@ -1,0 +1,61 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Update Administrator{% endblock title %}
+
+{% block content %}
+<div id="kt_app_content_container" class="app-container container-fluid">
+    <div class="card mb-5 mb-xl-8">
+        <!--begin::Header-->
+        <div class="card-header text-center border-0 pt-5">
+            <h3 class="card-title flex-column">
+                <span class="card-label fw-bold fs-3 mb-1">Administrator Update Form</span>
+            </h3>
+        </div>
+        <!--end::Header-->
+
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <!--begin::Content container-->
+            <div id="kt_app_content_container" class="app-container container-fluid">
+                <!--begin::Card-->
+                <div class="card">
+                    <!--begin::Card body-->
+                    <div class="card-body py-4">
+                        <!--begin::Table-->
+                        <div id="kt_table_users_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="fv-row mb-7 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
+                                    <!--begin::Label-->
+                                    <label class="required fw-semibold fs-6 mb-2">Full Name</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="{{ user.profile.name }}" required />
+                                    <!--end::Input-->
+                                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                                </div>
+                                <div class="fv-row mb-7 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
+                                    <!--begin::Label-->
+                                    <label class="required fw-semibold fs-6 mb-2">Email</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Email Address" value="{{ user.email }}" required />
+                                    <!--end::Input-->
+                                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                                </div>
+                                <div class="fv-row mb-7 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
+                                    <button type="submit" class="btn btn-primary">Update Administrator Account</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--end::Table-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card-->
+            </div>
+            <!--end::Content container-->
+        </div>
+    </div>    
+</div>
+{% endblock content %}

@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 class DashboardView(LoginRequiredMixin, View):
     """ Dashboard view """
-    template_name = 'dashboard/dashboard.html'
+    template_name = 'dashboard.html'
 
     def get(self, request):
         return render(request, self.template_name)

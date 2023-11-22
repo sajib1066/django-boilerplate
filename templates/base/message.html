@@ -1,0 +1,26 @@
+{% load message_type_checker %}
+{% load static %}
+
+{% if messages %}
+   {% for message in messages %}
+      {% if message|message_check %}
+            <script>
+                  Swal.fire({
+                     icon: 'info',
+                     title: 'Warning...',
+                     text: '{{message}}',
+                     footer: 'Please try again'
+                  })
+            </script>
+
+         {% else %}
+            <script>
+               Swal.fire(
+                  'Successfully Done!',
+                  '{{message}}',
+                  'success'
+               )
+            </script>
+      {% endif %}
+   {% endfor %}
+{% endif %}

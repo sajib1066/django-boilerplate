@@ -1,9 +1,11 @@
 from django.views.generic import View
-from django.shortcuts import redirect
+from django.shortcuts import render
 
 
-class HomeView(View):
+class HomePageView(View):
     """ Home view """
+    template_name = 'home.html'
 
-    def get(self, request):
-        return redirect('dashboard:dashboard')
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, self.template_name, context)
