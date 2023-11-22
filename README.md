@@ -5,7 +5,7 @@ Boilerplate for any django projects with HTML, CSS, Bootstrap, REST API.
 [![django-version](https://img.shields.io/badge/Django-4.2.7-green)](https://www.djangoproject.com/)
 
 
-## Setup documentation
+## Development Setup
 
 1. Create a repository using this template or clone the repository
    ```
