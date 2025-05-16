@@ -78,11 +78,21 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 THIRD_PARTY_APPS = [
     # https://www.django-rest-framework.org/#installation
     'rest_framework',
+    # https://github.com/carltongibson/django-filter
+    'django_filters',
+    # https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
+    'rest_framework.authtoken',
+    # https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
+    'rest_framework_simplejwt',
+    # https://github.com/adamchainz/django-cors-headers
+    'corsheaders',
 ]
 
 LOCAL_APPS = [
@@ -127,6 +137,7 @@ WSGI_APPLICATION = 'django_boilerplate.wsgi.application'
 
 AUTH_USER_MODEL = 'customauth.User'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -195,3 +206,46 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if os.getenv('DISABLE_LOGGING', False):  # for celery in jenkins ci only
     LOGGING_CONFIG = None
 LOGGING = LOGGING  # logging.py
+
+# Django REST Framework -------------------------------------------------------
+# https://www.django-rest-framework.org/api-guide/settings/
+
+DEFAULT_RENDERER_CLASSES = (
+    'rest_framework.renderers.JSONRenderer',
+)
+
+if DEBUG:
+    DEFAULT_RENDERER_CLASSES = DEFAULT_RENDERER_CLASSES + (
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",  # Or Redis, Memcached, etc.
+        "LOCATION": "unique-snowflake",
+    }
+}
+
+# CELERY SETTINGS
+
+# Broker settings
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}  # 1 hour
+
+# Task settings
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# Result backend settings
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
+
+# General
+CELERY_ACKS_LATE = True  # Make sure tasks are acknowledged *after* completion
+CELERY_TIMEZONE = 'UTC'  # Or your timezone
+CELERY_ENABLE_UTC = True
