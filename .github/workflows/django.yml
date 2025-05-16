@@ -25,13 +25,13 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          cp examples/local_settings.example django-boilerplate/local_settings.py
+          cp examples/local_settings.example django_boilerplate/local_settings.py
           mkdir -p logs
           pip install -r requirements.txt
 
       - name: Set environment variables
         run: |
-          echo "DJANGO_SETTINGS_MODULE=django-boilerplate.settings" >> $GITHUB_ENV
+          echo "DJANGO_SETTINGS_MODULE=django_boilerplate.settings" >> $GITHUB_ENV
 
       - name: Run Migrations
         run: python manage.py migrate
