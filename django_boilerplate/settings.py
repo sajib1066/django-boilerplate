@@ -13,7 +13,8 @@ import os
 
 from .local_settings import (
     SECRET_KEY, DEBUG, ALLOWED_HOSTS, DB_CONFIG,
-    TEMPLATES_DIR, STATICFILES_DIR, STATIC_DIR, MEDIA_DIR, LOGS_DIR
+    TEMPLATES_DIR, STATICFILES_DIR, STATIC_DIR, MEDIA_DIR, LOGS_DIR,
+    ENABLE_HTTPS, INTERNAL_IPS, CORS_ALLOWED_ORIGINS,
 )
 from django_boilerplate.logging import LOGGING
 
@@ -37,9 +38,39 @@ DEBUG = DEBUG
 
 ALLOWED_HOSTS = ALLOWED_HOSTS
 
+# HTTPS configuration
+if ENABLE_HTTPS:  # local_settings
+    USE_X_FORWARDED_HOST = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+# needed for debug toolbar
+INTERNAL_IPS = INTERNAL_IPS  # local_settings.py
+
+# CORS HEADERS
+CORS_ALLOWED_ORIGINS = CORS_ALLOWED_ORIGINS
+CORS_ALLOW_ALL_ORIGINS = True  # Allows from all origins when DEBUG mode is on
+
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'accept',
+    'Authorization',
+    'X-Requested-With',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 
 # Application definition
-
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
