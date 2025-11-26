@@ -46,7 +46,7 @@ LOGGING = {
             'handlers': ['console', 'file'],
             'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO').upper(),
         },
-        'customauth': {
+        'accounts': {
             'handlers': ['console', 'file'],
             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG').upper(),
             'propagate': False,  # required to eliminate duplication on root

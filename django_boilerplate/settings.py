@@ -96,7 +96,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'customauth.apps.CustomauthConfig',
+    'accounts.apps.AccountsConfig',
     'dashboard.apps.DashboardConfig',
 ]
 
@@ -135,7 +135,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_boilerplate.wsgi.application'
 
-AUTH_USER_MODEL = 'customauth.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 SITE_ID = 1
 
@@ -169,7 +169,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_URL = 'customauth:login'
+LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'dashboard:dashboard'
 
 

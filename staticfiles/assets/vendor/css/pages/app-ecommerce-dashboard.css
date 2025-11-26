@@ -1,0 +1,10 @@
+.card-img-position {
+  height: 190px;
+  position: absolute;
+}
+@media (max-width: 767.98px) {
+  .card-img-position {
+    position: static;
+    height: 160px;
+  }
+}

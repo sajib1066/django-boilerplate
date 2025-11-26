@@ -1,0 +1,11 @@
+.card-img-position {
+  height: 115%;
+}
+
+.light-style .transparent-card .avatar .avatar-initial {
+  background-color: #fff;
+}
+
+.dark-style .transparent-card .avatar .avatar-initial {
+  background-color: #312d4b;
+}
