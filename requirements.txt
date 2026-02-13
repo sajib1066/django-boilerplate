@@ -10,4 +10,4 @@ pillow==11.3.0
 pycodestyle==2.13.0
 pyflakes==3.3.2
 PyJWT==2.9.0
-sqlparse==0.5.3
+sqlparse==0.5.4
